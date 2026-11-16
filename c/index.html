@@ -194,8 +194,6 @@
             color: #000
         }
 
-        .landing__problems {}
-
         .landing__problems-title {
             font-family: Gilroy, sans-serif;
             font-weight: 800;
@@ -208,9 +206,17 @@
             color: white
         }
 
+        .landing__problems {
+            width: 100%;
+            max-width: 402px;
+            min-width: 0
+        }
+
         .landing__problems-list {
             display: flex;
             flex-direction: column;
+            width: 100%;
+            list-style: none;
             margin-bottom: 34px;
             gap: 14px
         }
@@ -218,25 +224,28 @@
         .landing__problems-item {
             display: flex;
             align-items: center;
-            gap: 13px;
-            padding: 12px 0 12px 10px;
+            gap: 10px;
+            padding: 12px 10px;
             background-image: url(./images/icon.avif);
             background-repeat: no-repeat;
-            background-size: cover;
-            color: white;
+            background-size: 100% 100%;
             background-position: center;
+            color: white;
             max-width: 402px;
-            width: 100%
+            width: 100%;
+            min-width: 0
         }
 
         .landing__problems-number {
             background: linear-gradient(180deg, #FFDCB2 0%, #FEDCB4 100%);
-            max-width: 84px;
-            width: 100%;
-            padding: 27px 19px 21px 19px;
+            flex: 0 0 clamp(60px, 21vw, 84px);
+            aspect-ratio: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             border-radius: 11px;
             font-weight: 800;
-            font-size: 35px;
+            font-size: clamp(28px, 9vw, 35px);
             line-height: 100%;
             text-align: center;
             color: #000
@@ -244,8 +253,10 @@
 
         .landing__problems-text {
             font-weight: 400;
-            font-size: clamp(17px, 5.3vw, 20px);
-            line-height: 130%
+            font-size: clamp(15px, 4.7vw, 20px);
+            line-height: 130%;
+            min-width: 0;
+            overflow-wrap: anywhere
         }
 
         .landing__summary {
@@ -264,18 +275,6 @@
             line-height: 130%;
             color: white;
             text-align: center
-        }
-
-        @media (max-width:400px) {
-            .landing__problems-item {
-                padding: 15.1px 0 13px 10px;
-            }
-        }
-
-        @media (max-width:380px) {
-            .landing__problems-item {
-                padding: 12px 0 12px 10px;
-            }
         }
 
         @media (max-width:395px) {
@@ -298,10 +297,6 @@
                 gap: 10px
             }
 
-            .landing__problems-number {
-                padding: 17px 12px 15px 11px;
-                max-width: 70px
-            }
         }
     </style>
     <link rel="preload" as="style" href="./css/main.css" onload="this.onload=null;this.rel='stylesheet'">
@@ -352,19 +347,19 @@
                     <ul class="landing__problems-list">
                         <li class="landing__problems-item">
                             <span class="landing__problems-number">01</span>
-                            <p class="landing__problems-text">Mavzuni ko'rasiz-u, nima <br> yozishni bilmay qolasiz</p>
+                            <p class="landing__problems-text">Mavzuni ko'rasiz-u, nima yozishni bilmay qolasiz</p>
                         </li>
                         <li class="landing__problems-item">
                             <span class="landing__problems-number">02</span>
-                            <p class="landing__problems-text">Kirishni yozasiz, keyin <br> fikr tugaydi</p>
+                            <p class="landing__problems-text">Kirishni yozasiz, keyin fikr tugaydi</p>
                         </li>
                         <li class="landing__problems-item">
                             <span class="landing__problems-number">03</span>
-                            <p class="landing__problems-text">Qaysi asar va dalilni <br> keltirishni bilmaysiz</p>
+                            <p class="landing__problems-text">Qaysi asar va dalilni keltirishni bilmaysiz</p>
                         </li>
                         <li class="landing__problems-item">
                             <span class="landing__problems-number">04</span>
-                            <p class="landing__problems-text">Oxiriga yetganda vaqt <br> tugab qoladi</p>
+                            <p class="landing__problems-text">Oxiriga yetganda vaqt tugab qoladi</p>
                         </li>
                     </ul>
 
